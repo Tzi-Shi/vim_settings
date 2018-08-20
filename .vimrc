@@ -25,6 +25,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Shougo/echodoc.vim'
 Plug 'scrooloose/nerdcommenter'
+Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
 
 call plug#end()
 
@@ -53,6 +54,7 @@ nnoremap <F10> :call asyncrun#quickfix_toggle(6)<cr>
 nnoremap <F9> :AsyncRun -cwd=<root> make <cr>
 
  " ale
+let g:ale_linters = {'cpp': ['g++']}
 let g:ale_linters_explicit = 1
 let g:ale_completion_delay = 500
 let g:ale_echo_delay = 20
@@ -65,7 +67,7 @@ let g:ale_c_gcc_options = '-Wall -O2 -std=c99'
 let g:ale_cpp_gcc_options = '-Wall -O2 -std=c++11'
 let g:ale_c_cppcheck_options = ''
 let g:ale_cpp_cppcheck_options = ''
-let g:ale_sign_error = "\ue009\ue009"
+"let g:ale_sign_error = "\ue009\ue009"
 hi! clear SpellBad
 hi! clear SpellCap
 hi! clear SpellRare
@@ -90,9 +92,10 @@ let g:ycm_semantic_triggers = {
 						\ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'], 
 						\ 'cs,lua,javascript': ['re!\w{2}'],
 						\ }
-let g:ycm_filetype_whitelist = {"c":1, "cpp":1, "h":1, "makefile":1, "vimrc":1}
+"let g:ycm_filetype_whitelist = {"c":1, "cpp":1, "h":1, "makefile":1, "vimrc":1}
 let g:ycm_max_num_candidates = 15
 let g:ycm_max_num_identifier_candidates = 15
+let g:ycm_confirm_extra_conf = 0
 
  " LeaderF
 let g:Lf_ShortcutF = '<c-p>'
