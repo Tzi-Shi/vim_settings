@@ -1,11 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/home/zixihu'
-let g:netrw_dirhist_2='/home/zixihu/.vim/autoload'
-let g:netrw_dirhist_3='/home/zixihu/codes/phase/src/polarValue'
-let g:netrw_dirhist_4='/home/zixihu/research/phase'
-let g:netrw_dirhist_5='/home/zixihu/research/phase/src/alignment'
-let g:netrw_dirhist_6='/home/zixihu/research/phase/exec'
-let g:netrw_dirhist_7='/home/zixihu/research/phase'
-let g:netrw_dirhist_8='/home/zixihu/research/phase/exec'
-let g:netrw_dirhist_9='/home/zixihu/test/main.cpp'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/zixihu/research/rewritePhase/src/grid'
+let g:netrw_dirhist_2='/home/zixihu/research/rewritePhase'
+let g:netrw_dirhist_3='/home/zixihu/research'
+let g:netrw_dirhist_4='/home/zixihu/research/rewritePhase/src/polarValue'

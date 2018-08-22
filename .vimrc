@@ -1,7 +1,17 @@
  " basic 
+set wildmode=longest,list
+set whichwrap+=<,>,h,l,[,]
+set wildmenu
+set splitright
+set splitbelow
+set completeopt=menu
 set vb
+set autoindent
+set cindent
 set nowrap
-set tabstop=4
+set softtabstop=4 expandtab
+set shiftwidth=4
+set expandtab
 set number
 set mouse=a
 set signcolumn=yes
@@ -28,7 +38,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'Shougo/echodoc.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
-Plug 'Townk/vim-autoclose'
+Plug 'Raimondi/delimitMate'
 
 call plug#end()
 
@@ -51,10 +61,11 @@ if !isdirectory(s:vim_tags)
 endif
 
  " asyncrun
-let g:asyncrun_open = 6
+let g:asyncrun_open = 20
 let g:asyncrun_rootmarks = ['.svn', '.root', '.git']
-nnoremap <F10> :call asyncrun#quickfix_toggle(6)<cr>
+nnoremap <F10> :call asyncrun#quickfix_toggle(20)<cr>
 nnoremap <F9> :AsyncRun -cwd=<root> make <cr>
+nnoremap <F8> :AsyncRun -cwd=<root> make test <cr>
 
  " ale
 let g:ale_linters = {'cpp': ['cppcheck', 'gcc']}
@@ -83,23 +94,23 @@ hi! SpellRare gui=undercurl guisp=magenta
  " airline
  let g:airline_theme='base16_bright'
 
- " youcompleteme
+  "youcompleteme
 let g:ycm_add_preview_to_completeopt = 0
+let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_show_diagnostics_ui = 0
-let g:ycm_server_log_level = 'info'
 let g:ycm_min_num_identifier_candidate_chars = 2
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
 let g:ycm_complete_in_strings = 1
 let g:ycm_key_invoke_completion = '<c-z>'
-"set completeopt = menu,menuone
 noremap <c-z> <NOP>
 let g:ycm_semantic_triggers = {
-						\ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'], 
-						\ 'cs,lua,javascript': ['re!\w{2}'],
-						\ }
+                        \ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'], 
+                        \ 'cs,lua,javascript': ['re!\w{2}'],
+                        \ }
 let g:ycm_max_num_candidates = 15
 let g:ycm_max_num_identifier_candidates = 15
 let g:ycm_confirm_extra_conf = 0
+"let g:ycm_global_ycm_extra_conf = "~"
 
  " LeaderF
 let g:Lf_ShortcutF = '<c-p>'
