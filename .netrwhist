@@ -1,6 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/home/zixihu/research/rewritePhase/src/grid'
 let g:netrw_dirhist_2='/home/zixihu/research/rewritePhase'
 let g:netrw_dirhist_3='/home/zixihu/research'
 let g:netrw_dirhist_4='/home/zixihu/research/rewritePhase/src/polarValue'
+let g:netrw_dirhist_5='/home/zixihu/research/rewritePhase/src'
+let g:netrw_dirhist_6='/home/zixihu/research/rewritePhase/src/grid'

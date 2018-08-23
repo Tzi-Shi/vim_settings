@@ -12,12 +12,19 @@ set nowrap
 set softtabstop=4 expandtab
 set shiftwidth=4
 set expandtab
-set number
-set mouse=a
+set number relativenumber
 set signcolumn=yes
 set switchbuf=vsplit
 set hlsearch
-:noremap <F4> :set hlsearch! hlsearch?<CR> 
+set mouse=a
+
+nmap <silent> <A-Up> :wincmd k <CR>
+nmap <silent> <A-Down> :wincmd j <CR>
+nmap <silent> <A-Left> :wincmd h <CR>
+nmap <silent> <A-Right> :wincmd l <CR>
+"set foldmethod=indent
+"set foldlevel=1
+"set foldclose=all
 let mapleader = ","
 autocmd BufEnter * silent! lcd %:p:h
 
@@ -39,6 +46,7 @@ Plug 'Shougo/echodoc.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
 Plug 'Raimondi/delimitMate'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
 call plug#end()
 
@@ -78,7 +86,7 @@ let g:ale_lint_on_text_changed = 'normal'
 let g:ale_lint_on_insert_leave = 1
 let g:airline#extension#ale#enable = 1
 let g:ale_c_gcc_options = '-Wall -O2 -std=c99'
-let g:ale_cpp_gcc_options = '-Wall -O2 -std=c++11 -fopenmp -I./../src/ -I./../'
+let g:ale_cpp_gcc_options = '-Wall -O2 -std=c++11 -fopenmp -I./../src -I./.. -I/home/zixihu/research/rewritePhase/src'
 "let g:ale_c_cppcheck_options = ''
 "let g:ale_cpp_cppcheck_options = ''
 "let g:ale_c_cppcheck_executable = 'cppcheck'
@@ -107,8 +115,8 @@ let g:ycm_semantic_triggers = {
                         \ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'], 
                         \ 'cs,lua,javascript': ['re!\w{2}'],
                         \ }
-let g:ycm_max_num_candidates = 15
-let g:ycm_max_num_identifier_candidates = 15
+let g:ycm_max_num_candidates = 10
+let g:ycm_max_num_identifier_candidates = 10
 let g:ycm_confirm_extra_conf = 0
 "let g:ycm_global_ycm_extra_conf = "~"
 
@@ -130,6 +138,7 @@ let g:Lf_PreviewResult = {'Function':0, 'BufTag':0}
 
  " echodoc
 set noshowmode
+let g:echodoc#enable_at_startup = 1
 
  " alt-key
 function! Terminal_MetaMode(mode)
