@@ -74,6 +74,7 @@ let g:asyncrun_rootmarks = ['.svn', '.root', '.git']
 nnoremap <F10> :call asyncrun#quickfix_toggle(20)<cr>
 nnoremap <F9> :AsyncRun -cwd=<root> make <cr>
 nnoremap <F8> :AsyncRun -cwd=<root> make test <cr>
+nnoremap <F7> :AsyncRun -cwd=<root> make clean <cr>
 
  " ale
 let g:ale_linters = {'cpp': ['cppcheck', 'gcc']}
@@ -86,7 +87,7 @@ let g:ale_lint_on_text_changed = 'normal'
 let g:ale_lint_on_insert_leave = 1
 let g:airline#extension#ale#enable = 1
 let g:ale_c_gcc_options = '-Wall -O2 -std=c99'
-let g:ale_cpp_gcc_options = '-Wall -O2 -std=c++11 -fopenmp -I./../src -I./.. -I/home/zixihu/research/rewritePhase/src'
+let g:ale_cpp_gcc_options = '-Wall -O2 -std=c++11 -fopenmp -I./../src -I./.. -I/home/zixihu/research/phase/src'
 "let g:ale_c_cppcheck_options = ''
 "let g:ale_cpp_cppcheck_options = ''
 "let g:ale_c_cppcheck_executable = 'cppcheck'
@@ -111,6 +112,7 @@ let g:ycm_collect_identifiers_from_comments_and_strings = 1
 let g:ycm_complete_in_strings = 1
 let g:ycm_key_invoke_completion = '<c-z>'
 noremap <c-z> <NOP>
+"let g:ycm_filetype_whitelist = {'.cpp': 1, '.h': 1}
 let g:ycm_semantic_triggers = {
                         \ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'], 
                         \ 'cs,lua,javascript': ['re!\w{2}'],
@@ -119,6 +121,7 @@ let g:ycm_max_num_candidates = 10
 let g:ycm_max_num_identifier_candidates = 10
 let g:ycm_confirm_extra_conf = 0
 "let g:ycm_global_ycm_extra_conf = "~"
+"let g:ycm_filetype_blacklist = {'.txt': 1}
 
  " LeaderF
 let g:Lf_ShortcutF = '<c-p>'
@@ -139,6 +142,10 @@ let g:Lf_PreviewResult = {'Function':0, 'BufTag':0}
  " echodoc
 set noshowmode
 let g:echodoc#enable_at_startup = 1
+
+ " delimitMate
+let delimitMate_expand_cr = 1
+let delimitMate_expand_space = 1
 
  " alt-key
 function! Terminal_MetaMode(mode)
